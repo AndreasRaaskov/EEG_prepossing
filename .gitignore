@@ -1,0 +1,7 @@
+*.ider
+*_pycaches
+*venv
+*.pyc
+*.exe
+*.xml
+*.iml
