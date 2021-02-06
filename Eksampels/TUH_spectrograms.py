@@ -1,5 +1,5 @@
 import os
-from General import standard_preprossin,window_prepossing
+from General import standard_preprossing,window_prepossing
 from TUH import TUH_prepropssing
 from Plots.Standard_plots import spectrogram
 
@@ -11,19 +11,19 @@ add anotation to each window.
 and save it as spectrograms.  
 """
 
-class pipeline(TUH_prepropssing,standard_preprossin,window_prepossing):
+class pipeline(TUH_prepropssing,standard_preprossing,window_prepossing):
 
     def makeDataset(self,Data_path):
 
         edfDict=self.findEDF(Data_path)
         self.dataDir=Data_path
 
-        "Only go over one file"
+        #Only go over one file
         file=list(edfDict.keys())[0]
         EEG_serie=self.readRawEdf(edfDict[file]["path"])
         EEG_serie.plot()
         print(EEG_serie.ch_names)
-        EEG_serie=self.renameChannels(EEG_serie)
+        EEG_serie=self.renameChannels(EEG_serie) #Remove bad chanels
         print(EEG_serie.ch_names)
         EEG_serie=self.Makoto(EEG_serie,lpfq=None,hpfq=None)
         EEG_serie.plot()

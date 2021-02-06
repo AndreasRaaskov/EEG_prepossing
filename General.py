@@ -3,7 +3,7 @@ from mne.io import read_raw_edf
 from collections import defaultdict
 import os
 
-class standard_preprossin:
+class standard_preprossing:
     """
     A class for the most basic loading of data.
     Use as a prarent for more specific pipelines
@@ -62,7 +62,7 @@ class window_prepossing:
     def slidingWindow(self,EEGseries,tWindow,overlap=0,DataMaker=False):
         """
         Split singal up into windows. Note if signal length is not divisible by twindow will the last part of the signal
-        be town away.
+        be trown away.
         :EEGseries:
         :float tWindow: how long each window should be. in seconds
         :float Overlap: must be in range [0,1[

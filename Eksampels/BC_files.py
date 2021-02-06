@@ -1,7 +1,7 @@
 import os
 
 from BC import BrainCapture_prepossing
-from General import standard_preprossin
+from General import standard_preprossing
 from Plots.Plotly import plot_EEG
 
 """
@@ -11,7 +11,7 @@ and plotit using plotly
 """
 
 
-class pipeline(standard_preprossin,BrainCapture_prepossing):
+class pipeline(standard_preprossing,BrainCapture_prepossing):
     def __init__(self,datapath):
         self.dataDir=datapath
 
